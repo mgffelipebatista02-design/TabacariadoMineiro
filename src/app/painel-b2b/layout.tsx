@@ -100,7 +100,7 @@ export default function PainelB2BLayout({
                     className={cn(
                       'flex items-center gap-3 px-4 py-3 text-sm font-medium transition-colors',
                       isActive
-                        ? 'text-accent-amber bg-accent-amber/10'
+                        ? 'text-accent-green bg-accent-green/10'
                         : 'text-text-secondary hover:text-text-primary hover:bg-bg-elevated'
                     )}
                   >
@@ -127,7 +127,7 @@ export default function PainelB2BLayout({
                 className={cn(
                   'flex items-center gap-3 px-4 py-2.5 rounded-[--radius-md] text-sm font-medium transition-colors',
                   isActive
-                    ? 'text-accent-amber bg-accent-amber/10 border border-accent-amber/25'
+                    ? 'text-accent-green bg-accent-green/10 border border-accent-green/25'
                     : 'text-text-secondary hover:text-text-primary hover:bg-bg-elevated'
                 )}
               >

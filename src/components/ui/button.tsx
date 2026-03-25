@@ -6,12 +6,12 @@ import { Loader2 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 const buttonVariants = cva(
-  'inline-flex items-center justify-center font-body font-medium transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-amber focus-visible:ring-offset-2 focus-visible:ring-offset-bg-primary disabled:pointer-events-none disabled:opacity-50 rounded-[--radius-md]',
+  'inline-flex items-center justify-center font-body font-medium transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-green focus-visible:ring-offset-2 focus-visible:ring-offset-bg-primary disabled:pointer-events-none disabled:opacity-50 rounded-[--radius-md]',
   {
     variants: {
       variant: {
         primary:
-          'bg-accent-amber text-bg-primary hover:bg-accent-amber-light active:bg-accent-amber-dark',
+          'bg-accent-green text-bg-primary hover:bg-accent-green-light active:bg-accent-green-dark',
         secondary:
           'border border-border-default text-text-primary hover:border-border-hover hover:bg-bg-elevated active:bg-bg-card',
         ghost:

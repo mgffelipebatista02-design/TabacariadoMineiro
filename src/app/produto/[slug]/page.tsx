@@ -51,7 +51,7 @@ const mockReviews = [
 
 function stockBadge(stock: number) {
   if (stock > 10) return <Badge variant="green">Em estoque</Badge>
-  if (stock >= 1) return <Badge variant="amber">Últimas unidades</Badge>
+  if (stock >= 1) return <Badge variant="olive">Últimas unidades</Badge>
   return <Badge variant="red">Indisponível</Badge>
 }
 
@@ -122,7 +122,7 @@ export default function ProdutoPage() {
   const tabTriggerClass = (value: string) =>
     cn(
       'px-4 py-2.5 text-sm font-medium font-body transition-colors',
-      'border-b-2 border-transparent data-[state=active]:border-accent-amber data-[state=active]:text-accent-amber',
+      'border-b-2 border-transparent data-[state=active]:border-accent-green data-[state=active]:text-accent-green',
       'text-text-secondary hover:text-text-primary'
     )
 
@@ -196,7 +196,7 @@ export default function ProdutoPage() {
           >
             {imageSlides.map((i) => (
               <SwiperSlide key={i}>
-                <div className="flex aspect-square cursor-pointer items-center justify-center rounded-[--radius-md] border border-border-default bg-bg-elevated transition-colors hover:border-accent-amber">
+                <div className="flex aspect-square cursor-pointer items-center justify-center rounded-[--radius-md] border border-border-default bg-bg-elevated transition-colors hover:border-accent-green">
                   <Package className="h-8 w-8 text-text-muted" />
                 </div>
               </SwiperSlide>

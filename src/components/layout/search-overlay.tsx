@@ -85,7 +85,7 @@ export function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
                   className={cn(
                     'w-full rounded-[--radius-lg] border border-border-default bg-bg-input',
                     'py-4 pl-12 pr-4 text-lg text-text-primary placeholder:text-text-muted',
-                    'outline-none focus:border-accent-amber transition-colors'
+                    'outline-none focus:border-accent-green transition-colors'
                   )}
                 />
               </div>
@@ -135,7 +135,7 @@ export function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
                         </p>
                       </div>
 
-                      <p className="flex-shrink-0 text-sm font-semibold text-accent-amber">
+                      <p className="flex-shrink-0 text-sm font-semibold text-accent-green">
                         {formatBRL(mode === 'b2b' ? product.priceB2B : product.priceB2C)}
                       </p>
                     </Link>

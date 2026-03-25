@@ -33,7 +33,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             id={inputId}
             ref={ref}
             className={cn(
-              'flex h-10 w-full rounded-[--radius-md] bg-bg-input border border-border-default px-3 py-2 text-sm text-text-primary placeholder:text-text-muted transition-colors duration-200 focus:border-accent-amber focus:outline-none focus:ring-1 focus:ring-accent-amber disabled:cursor-not-allowed disabled:opacity-50',
+              'flex h-10 w-full rounded-[--radius-md] bg-bg-input border border-border-default px-3 py-2 text-sm text-text-primary placeholder:text-text-muted transition-colors duration-200 focus:border-accent-green focus:outline-none focus:ring-1 focus:ring-accent-green disabled:cursor-not-allowed disabled:opacity-50',
               icon && 'pl-10',
               error && 'border-status-error focus:border-status-error focus:ring-status-error',
               className

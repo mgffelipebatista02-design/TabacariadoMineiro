@@ -59,7 +59,7 @@ export function ComplianceSection() {
                 )}
               >
                 <div className="flex h-14 w-14 items-center justify-center rounded-[--radius-lg] bg-bg-elevated">
-                  <Icon className="h-7 w-7 text-accent-amber" />
+                  <Icon className="h-7 w-7 text-accent-green" />
                 </div>
                 <h3 className="mt-5 font-display text-lg font-semibold text-text-primary">
                   {item.title}

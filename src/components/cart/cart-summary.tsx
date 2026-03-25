@@ -42,12 +42,12 @@ export function CartSummary({ condensed = false, className }: CartSummaryProps) 
             <span className="text-text-secondary flex items-center gap-2">
               Desconto
               {activeTierLabel && (
-                <Badge variant="amber" className="text-[0.625rem]">
+                <Badge variant="olive" className="text-[0.625rem]">
                   {discountTier ? `${DISCOUNT_TIERS.find((t) => t.min === discountTier)?.discount! * 100}%` : ''}
                 </Badge>
               )}
             </span>
-            <span className="font-mono text-accent-amber">-{formatBRL(discount)}</span>
+            <span className="font-mono text-accent-green">-{formatBRL(discount)}</span>
           </div>
         )}
 

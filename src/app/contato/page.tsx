@@ -62,7 +62,7 @@ export default function ContatoPage() {
                   Mensagem
                 </label>
                 <textarea
-                  className="w-full rounded-[--radius-md] border border-border-default bg-bg-input px-3 py-2 text-sm text-text-primary placeholder:text-text-muted focus:border-accent-amber focus:outline-none focus:ring-1 focus:ring-accent-amber min-h-[120px] resize-y"
+                  className="w-full rounded-[--radius-md] border border-border-default bg-bg-input px-3 py-2 text-sm text-text-primary placeholder:text-text-muted focus:border-accent-green focus:outline-none focus:ring-1 focus:ring-accent-green min-h-[120px] resize-y"
                   {...register('message')}
                 />
                 {errors.message && (
@@ -79,7 +79,7 @@ export default function ContatoPage() {
         <div className="space-y-4">
           <Card padding="md">
             <div className="flex items-start gap-3">
-              <Mail className="h-5 w-5 text-accent-amber mt-0.5" />
+              <Mail className="h-5 w-5 text-accent-green mt-0.5" />
               <div>
                 <p className="font-medium text-sm">E-mail</p>
                 <p className="text-text-secondary text-sm">contato@tabacariadomineiro.com.br</p>
@@ -88,7 +88,7 @@ export default function ContatoPage() {
           </Card>
           <Card padding="md">
             <div className="flex items-start gap-3">
-              <Phone className="h-5 w-5 text-accent-amber mt-0.5" />
+              <Phone className="h-5 w-5 text-accent-green mt-0.5" />
               <div>
                 <p className="font-medium text-sm">Telefone</p>
                 <p className="text-text-secondary text-sm">(31) 3000-0000</p>
@@ -97,7 +97,7 @@ export default function ContatoPage() {
           </Card>
           <Card padding="md">
             <div className="flex items-start gap-3">
-              <MapPin className="h-5 w-5 text-accent-amber mt-0.5" />
+              <MapPin className="h-5 w-5 text-accent-green mt-0.5" />
               <div>
                 <p className="font-medium text-sm">Endereço</p>
                 <p className="text-text-secondary text-sm">

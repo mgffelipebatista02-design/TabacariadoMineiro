@@ -38,7 +38,7 @@ function Modal({ open, onOpenChange, children, title, description, className }: 
           {children}
           <Dialog.Close asChild>
             <button
-              className="absolute right-4 top-4 rounded-[--radius-sm] p-1 text-text-muted hover:text-text-primary hover:bg-bg-elevated transition-colors focus:outline-none focus:ring-2 focus:ring-accent-amber"
+              className="absolute right-4 top-4 rounded-[--radius-sm] p-1 text-text-muted hover:text-text-primary hover:bg-bg-elevated transition-colors focus:outline-none focus:ring-2 focus:ring-accent-green"
               aria-label="Fechar"
             >
               <X className="h-4 w-4" />

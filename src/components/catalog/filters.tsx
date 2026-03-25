@@ -34,7 +34,7 @@ function Filters({
           onChange={(e) => onSortChange(e.target.value as SortOption)}
           className={cn(
             'h-10 appearance-none rounded-[--radius-md] border border-border-default bg-bg-input px-4 pr-9 text-sm font-body text-text-primary',
-            'transition-colors hover:border-border-hover focus:border-accent-amber focus:outline-none focus:ring-2 focus:ring-accent-amber/25'
+            'transition-colors hover:border-border-hover focus:border-accent-green focus:outline-none focus:ring-2 focus:ring-accent-green/25'
           )}
         >
           {(Object.keys(sortLabels) as SortOption[]).map((key) => (
@@ -53,7 +53,7 @@ function Filters({
         className={cn(
           'inline-flex h-10 items-center gap-2 rounded-[--radius-md] border px-4 text-sm font-body transition-colors',
           hideOutOfStock
-            ? 'border-accent-amber bg-accent-amber/10 text-accent-amber'
+            ? 'border-accent-green bg-accent-green/10 text-accent-green'
             : 'border-border-default bg-bg-input text-text-secondary hover:border-border-hover hover:text-text-primary'
         )}
       >

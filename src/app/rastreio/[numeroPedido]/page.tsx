@@ -13,9 +13,9 @@ import type { OrderStatus } from '@/types'
 
 const STATUS_CONFIG: Record<
   OrderStatus,
-  { label: string; variant: 'amber' | 'green' | 'red' | 'blue' | 'gray' }
+  { label: string; variant: 'olive' | 'green' | 'red' | 'blue' | 'gray' }
 > = {
-  pendente: { label: 'Pendente', variant: 'amber' },
+  pendente: { label: 'Pendente', variant: 'olive' },
   confirmado: { label: 'Confirmado', variant: 'blue' },
   em_separacao: { label: 'Em Separação', variant: 'blue' },
   enviado: { label: 'Enviado', variant: 'blue' },
@@ -115,7 +115,7 @@ export default function RastreioPage() {
           </div>
           <div>
             <p className="text-xs text-text-muted">Total</p>
-            <p className="text-sm font-semibold text-accent-amber">
+            <p className="text-sm font-semibold text-accent-green">
               {formatBRL(order.total)}
             </p>
           </div>
@@ -147,7 +147,7 @@ export default function RastreioPage() {
                     className={cn(
                       'h-3 w-3 rounded-full shrink-0 mt-1',
                       isLast
-                        ? 'bg-accent-amber ring-4 ring-accent-amber/20'
+                        ? 'bg-accent-green ring-4 ring-accent-green/20'
                         : 'bg-border-default'
                     )}
                   />
@@ -163,7 +163,7 @@ export default function RastreioPage() {
                     <span
                       className={cn(
                         'text-sm font-semibold',
-                        isLast ? 'text-accent-amber' : 'text-text-primary'
+                        isLast ? 'text-accent-green' : 'text-text-primary'
                       )}
                     >
                       {STATUS_LABELS[event.status]}

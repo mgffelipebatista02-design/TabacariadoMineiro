@@ -172,7 +172,7 @@ export default function PedidoRapidoPage() {
           className={cn(
             'px-3 py-1.5 rounded-[--radius-pill] text-sm font-medium transition-colors',
             !categoryFilter
-              ? 'bg-accent-amber text-bg-primary'
+              ? 'bg-accent-green text-bg-primary'
               : 'bg-bg-elevated text-text-secondary hover:text-text-primary'
           )}
         >
@@ -187,7 +187,7 @@ export default function PedidoRapidoPage() {
             className={cn(
               'px-3 py-1.5 rounded-[--radius-pill] text-sm font-medium transition-colors',
               categoryFilter === cat
-                ? 'bg-accent-amber text-bg-primary'
+                ? 'bg-accent-green text-bg-primary'
                 : 'bg-bg-elevated text-text-secondary hover:text-text-primary'
             )}
           >
@@ -237,7 +237,7 @@ export default function PedidoRapidoPage() {
                   }}
                   className={cn(
                     'grid grid-cols-[80px_1fr_120px_100px_80px_120px] gap-2 px-4 items-center border-b border-border-default text-sm',
-                    qty > 0 && 'bg-accent-amber/5'
+                    qty > 0 && 'bg-accent-green/5'
                   )}
                 >
                   <div className="font-mono text-xs text-text-muted truncate">
@@ -256,7 +256,7 @@ export default function PedidoRapidoPage() {
                     {product.stock > 20 ? (
                       <span className="text-text-secondary">{product.stock}</span>
                     ) : product.stock > 0 ? (
-                      <Badge variant="amber">{product.stock}</Badge>
+                      <Badge variant="olive">{product.stock}</Badge>
                     ) : (
                       <Badge variant="red">0</Badge>
                     )}
@@ -270,7 +270,7 @@ export default function PedidoRapidoPage() {
                         setQty(product.id, parseInt(e.target.value, 10) || 0)
                       }
                       placeholder="0"
-                      className="w-20 h-8 ml-auto rounded-[--radius-md] bg-bg-input border border-border-default px-2 text-sm text-text-primary text-right focus:border-accent-amber focus:outline-none focus:ring-1 focus:ring-accent-amber"
+                      className="w-20 h-8 ml-auto rounded-[--radius-md] bg-bg-input border border-border-default px-2 text-sm text-text-primary text-right focus:border-accent-green focus:outline-none focus:ring-1 focus:ring-accent-green"
                     />
                   </div>
                 </div>
@@ -303,7 +303,7 @@ export default function PedidoRapidoPage() {
               <div
                 className={cn(
                   'h-full rounded-[--radius-pill] transition-all duration-300',
-                  minOrderMet ? 'bg-status-success' : 'bg-accent-amber'
+                  minOrderMet ? 'bg-status-success' : 'bg-accent-green'
                 )}
                 style={{ width: `${progress}%` }}
               />

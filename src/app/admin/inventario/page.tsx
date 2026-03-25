@@ -24,7 +24,7 @@ const categories: (Category | 'Todas')[] = ['Todas', 'Essências', 'Sedas', 'Isq
 
 function getStockStatus(stock: number) {
   if (stock === 0) return { label: 'Esgotado', variant: 'red' as const }
-  if (stock <= 20) return { label: 'Baixo', variant: 'amber' as const }
+  if (stock <= 20) return { label: 'Baixo', variant: 'olive' as const }
   return { label: 'Normal', variant: 'green' as const }
 }
 
@@ -121,7 +121,7 @@ export default function InventarioPage() {
             <select
               value={categoryFilter}
               onChange={(e) => setCategoryFilter(e.target.value as Category | 'Todas')}
-              className="h-10 rounded-[--radius-md] bg-bg-input border border-border-default px-3 text-sm text-text-primary focus:border-accent-amber focus:outline-none focus:ring-1 focus:ring-accent-amber"
+              className="h-10 rounded-[--radius-md] bg-bg-input border border-border-default px-3 text-sm text-text-primary focus:border-accent-green focus:outline-none focus:ring-1 focus:ring-accent-green"
             >
               {categories.map((cat) => (
                 <option key={cat} value={cat}>
@@ -203,12 +203,12 @@ export default function InventarioPage() {
                           if (e.key === 'Enter') commitEdit()
                           if (e.key === 'Escape') setEditingCell(null)
                         }}
-                        className="w-24 rounded-[--radius-md] bg-bg-input border border-accent-amber px-2 py-1 text-sm font-mono text-text-primary focus:outline-none"
+                        className="w-24 rounded-[--radius-md] bg-bg-input border border-accent-green px-2 py-1 text-sm font-mono text-text-primary focus:outline-none"
                       />
                     ) : (
                       <button
                         onClick={() => startEdit(product.id, 'priceB2C', product.priceB2C)}
-                        className="font-mono text-sm hover:text-accent-amber transition-colors cursor-pointer"
+                        className="font-mono text-sm hover:text-accent-green transition-colors cursor-pointer"
                       >
                         {formatBRL(product.priceB2C)}
                       </button>
@@ -230,12 +230,12 @@ export default function InventarioPage() {
                           if (e.key === 'Enter') commitEdit()
                           if (e.key === 'Escape') setEditingCell(null)
                         }}
-                        className="w-24 rounded-[--radius-md] bg-bg-input border border-accent-amber px-2 py-1 text-sm font-mono text-text-primary focus:outline-none"
+                        className="w-24 rounded-[--radius-md] bg-bg-input border border-accent-green px-2 py-1 text-sm font-mono text-text-primary focus:outline-none"
                       />
                     ) : (
                       <button
                         onClick={() => startEdit(product.id, 'priceB2B', product.priceB2B)}
-                        className="font-mono text-sm hover:text-accent-amber transition-colors cursor-pointer"
+                        className="font-mono text-sm hover:text-accent-green transition-colors cursor-pointer"
                       >
                         {formatBRL(product.priceB2B)}
                       </button>
@@ -257,12 +257,12 @@ export default function InventarioPage() {
                           if (e.key === 'Enter') commitEdit()
                           if (e.key === 'Escape') setEditingCell(null)
                         }}
-                        className="w-20 rounded-[--radius-md] bg-bg-input border border-accent-amber px-2 py-1 text-sm font-mono text-text-primary focus:outline-none"
+                        className="w-20 rounded-[--radius-md] bg-bg-input border border-accent-green px-2 py-1 text-sm font-mono text-text-primary focus:outline-none"
                       />
                     ) : (
                       <button
                         onClick={() => startEdit(product.id, 'stock', product.stock)}
-                        className="font-mono text-sm hover:text-accent-amber transition-colors cursor-pointer"
+                        className="font-mono text-sm hover:text-accent-green transition-colors cursor-pointer"
                       >
                         {product.stock}
                       </button>

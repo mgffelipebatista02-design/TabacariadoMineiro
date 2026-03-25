@@ -14,12 +14,12 @@ import {
 import { orders } from '@/data/orders'
 import { formatBRL } from '@/lib/utils'
 
-const STATUS_BADGE_MAP: Record<string, { label: string; variant: 'amber' | 'green' | 'red' | 'blue' | 'gray' }> = {
+const STATUS_BADGE_MAP: Record<string, { label: string; variant: 'olive' | 'green' | 'red' | 'blue' | 'gray' }> = {
   pendente: { label: 'Pendente', variant: 'gray' },
   confirmado: { label: 'Confirmado', variant: 'blue' },
-  em_separacao: { label: 'Em Separacao', variant: 'amber' },
+  em_separacao: { label: 'Em Separacao', variant: 'olive' },
   enviado: { label: 'Enviado', variant: 'blue' },
-  em_transito: { label: 'Em Transito', variant: 'amber' },
+  em_transito: { label: 'Em Transito', variant: 'olive' },
   entregue: { label: 'Entregue', variant: 'green' },
   cancelado: { label: 'Cancelado', variant: 'red' },
 }
@@ -57,7 +57,7 @@ export default function PedidosB2BPage() {
         <select
           value={statusFilter}
           onChange={(e) => setStatusFilter(e.target.value)}
-          className="h-10 rounded-[--radius-md] bg-bg-input border border-border-default px-3 py-2 text-sm text-text-primary focus:border-accent-amber focus:outline-none focus:ring-1 focus:ring-accent-amber"
+          className="h-10 rounded-[--radius-md] bg-bg-input border border-border-default px-3 py-2 text-sm text-text-primary focus:border-accent-green focus:outline-none focus:ring-1 focus:ring-accent-green"
         >
           {STATUS_OPTIONS.map((opt) => (
             <option key={opt.value} value={opt.value}>

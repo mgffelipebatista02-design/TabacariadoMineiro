@@ -117,7 +117,7 @@ export default function CarrinhoPage() {
                     className={cn(
                       'flex w-full items-center justify-between rounded-[--radius-lg] border p-3 transition-colors duration-200',
                       selectedShipping === option.id
-                        ? 'border-accent-amber bg-accent-amber/5'
+                        ? 'border-accent-green bg-accent-green/5'
                         : 'border-border-default hover:border-border-hover bg-bg-input'
                     )}
                   >

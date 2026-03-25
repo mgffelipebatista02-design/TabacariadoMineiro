@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { X } from 'lucide-react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
@@ -56,7 +57,14 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
           >
             {/* Header */}
             <div className="flex items-center justify-between border-b border-border-default px-4 py-4">
-              <span className="font-display text-lg font-bold text-accent-amber">
+              <span className="flex items-center gap-2 font-display text-lg font-bold text-accent-green">
+                <Image
+                  src="/images/logo-tm.jpg"
+                  alt="TM"
+                  width={32}
+                  height={32}
+                  className="rounded-full"
+                />
                 Menu
               </span>
               <button
@@ -128,14 +136,14 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
                 className={cn(
                   'flex w-full items-center justify-center gap-2 rounded-[--radius-md] border px-4 py-2.5 text-sm font-medium transition-colors',
                   isB2B
-                    ? 'border-accent-amber bg-accent-amber/10 text-accent-amber'
+                    ? 'border-accent-green bg-accent-green/10 text-accent-green'
                     : 'border-border-default bg-bg-card text-text-secondary hover:border-border-hover'
                 )}
               >
                 <span
                   className={cn(
                     'h-2 w-2 rounded-full',
-                    isB2B ? 'bg-accent-amber' : 'bg-text-muted'
+                    isB2B ? 'bg-accent-green' : 'bg-text-muted'
                   )}
                 />
                 {isB2B ? 'Modo Atacado' : 'Modo Varejo'}

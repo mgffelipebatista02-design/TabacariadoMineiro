@@ -42,8 +42,8 @@ export default function CompliancePage() {
             key={item.title}
             className="flex gap-4 rounded-[--radius-xl] border border-border-default bg-bg-card p-6"
           >
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[--radius-lg] bg-accent-amber/10">
-              <item.icon className="h-5 w-5 text-accent-amber" />
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[--radius-lg] bg-accent-green/10">
+              <item.icon className="h-5 w-5 text-accent-green" />
             </div>
             <div>
               <h2 className="font-display text-lg font-semibold mb-1">{item.title}</h2>

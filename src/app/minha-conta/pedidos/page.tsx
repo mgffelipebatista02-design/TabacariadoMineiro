@@ -10,9 +10,9 @@ import type { OrderStatus } from '@/types'
 
 const STATUS_CONFIG: Record<
   OrderStatus,
-  { label: string; variant: 'amber' | 'green' | 'red' | 'blue' | 'gray' }
+  { label: string; variant: 'olive' | 'green' | 'red' | 'blue' | 'gray' }
 > = {
-  pendente: { label: 'Pendente', variant: 'amber' },
+  pendente: { label: 'Pendente', variant: 'olive' },
   confirmado: { label: 'Confirmado', variant: 'blue' },
   em_separacao: { label: 'Em Separação', variant: 'blue' },
   enviado: { label: 'Enviado', variant: 'blue' },

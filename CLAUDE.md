@@ -14,7 +14,7 @@ TabacariadoMineiro — front-end de loja online de tabacaria (B2C varejo + B2B a
 ## Stack
 
 - **Next.js 16** (App Router) + **React 19** + **TypeScript**
-- **Tailwind CSS v4** (via `@tailwindcss/postcss`) — dark theme design system
+- **Tailwind CSS v4** (via `@tailwindcss/postcss`) — light green theme design system
 - **Framer Motion** — animações e transições
 - **Radix UI** — primitivos acessíveis (dialog, tabs, accordion, switch, dropdown)
 - **Recharts** — gráficos do painel admin
@@ -58,12 +58,12 @@ src/
 
 ## Design System (Tailwind @theme tokens)
 
-Cores são usadas como classes Tailwind diretamente (ex: `bg-bg-primary`, `text-accent-amber`, `border-border-default`):
+Cores são usadas como classes Tailwind diretamente (ex: `bg-bg-primary`, `text-accent-green`, `border-border-default`):
 
-- **Backgrounds:** `bg-primary` (#0A0A0A), `bg-secondary` (#111111), `bg-card` (#161616), `bg-elevated` (#1A1A1A), `bg-input` (#1E1E1E)
-- **Accent:** `accent-amber` (#C8956C), `accent-amber-light`, `accent-amber-dark`, `accent-gold`
-- **Text:** `text-primary` (#FFF), `text-secondary` (#A3A3A3), `text-muted` (#6B6B6B)
-- **Borders:** `border-default` (#262626), `border-hover` (#404040), `border-accent`
+- **Backgrounds:** `bg-primary` (#F5F7F0), `bg-secondary` (#EBF0E0), `bg-card` (#FFFFFF), `bg-elevated` (#F0F4E8), `bg-input` (#FFFFFF)
+- **Accent:** `accent-green` (#5B7A34), `accent-green-light` (#6B8A3E), `accent-green-dark` (#4A6629), `accent-gold` (#C8956C)
+- **Text:** `text-primary` (#1A2E0A), `text-secondary` (#5A6B4A), `text-muted` (#8A9878)
+- **Borders:** `border-default` (#D4DCC4), `border-hover` (#B5C4A0), `border-accent` (#5B7A34)
 - **Status:** `status-success` (#22C55E), `status-warning`, `status-error` (#EF4444), `status-info`
 - **Fonts:** `font-display` (Playfair Display), `font-body` (DM Sans), `font-mono` (JetBrains Mono)
 - **Radius:** `rounded-[--radius-sm]` (6px), `rounded-[--radius-md]` (8px), `rounded-[--radius-lg]` (12px), `rounded-[--radius-xl]` (16px), `rounded-[--radius-pill]` (100px)
@@ -74,7 +74,7 @@ Cores são usadas como classes Tailwind diretamente (ex: `bg-bg-primary`, `text-
 - **Cart:** `useCart()` retorna `{ items, addItem, removeItem, updateQuantity, clearCart, subtotal, discount, shipping, total, b2bMinOrderMet }`. Desconto progressivo (5%/8%/12%). Pedido mínimo B2B R$500.
 - **Auth:** `useAuth()` retorna `{ user, login, logout, isLoading }`. Mock users: `cliente@email.com`/`123456` (B2C), `lojista@email.com`/`123456` (B2B), `admin@tabacaria.com`/`admin123` (Admin).
 - **UI Components:** Todos usam CVA para variantes, `cn()` para merge de classes, `'use client'` directive.
-- **Badge:** Usa prop `variant` (amber|green|red|blue|gray), NÃO `color` (conflito com HTML).
+- **Badge:** Usa prop `variant` (olive|green|red|blue|gray), NÃO `color` (conflito com HTML).
 - **useSearchParams:** Páginas que usam `useSearchParams` devem ser wrappadas em `<Suspense>` (ver busca/page.tsx).
 
 ## ANVISA Compliance (OBRIGATÓRIO)

@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Search, ShoppingCart, User, Menu, ChevronDown } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { SITE_NAME, CATEGORIES } from '@/lib/constants'
@@ -56,9 +57,18 @@ export function Header() {
           {/* Logo */}
           <Link
             href="/"
-            className="font-display text-xl font-bold text-accent-amber hover:text-accent-amber-light transition-colors"
+            className="flex items-center gap-2 transition-opacity hover:opacity-80"
           >
-            {SITE_NAME}
+            <Image
+              src="/images/logo-tm.jpg"
+              alt="Tabacaria do Mineiro"
+              width={40}
+              height={40}
+              className="rounded-full"
+            />
+            <span className="hidden font-display text-lg font-bold text-accent-green sm:inline">
+              {SITE_NAME}
+            </span>
           </Link>
 
           {/* Desktop Nav */}
@@ -127,14 +137,14 @@ export function Header() {
               className={cn(
                 'hidden items-center gap-2 rounded-[--radius-pill] border px-3 py-1.5 text-xs font-medium transition-colors md:flex',
                 isB2B
-                  ? 'border-accent-amber bg-accent-amber/10 text-accent-amber'
+                  ? 'border-accent-green bg-accent-green/10 text-accent-green'
                   : 'border-border-default bg-bg-card text-text-secondary hover:border-border-hover'
               )}
             >
               <span
                 className={cn(
                   'h-2 w-2 rounded-full',
-                  isB2B ? 'bg-accent-amber' : 'bg-text-muted'
+                  isB2B ? 'bg-accent-green' : 'bg-text-muted'
                 )}
               />
               {isB2B ? 'Atacado' : 'Varejo'}
@@ -157,7 +167,7 @@ export function Header() {
             >
               <ShoppingCart className="h-5 w-5" />
               {itemCount > 0 && (
-                <span className="absolute -right-1 -top-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-accent-amber px-1 text-[10px] font-bold text-bg-primary">
+                <span className="absolute -right-1 -top-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-accent-green px-1 text-[10px] font-bold text-bg-primary">
                   {itemCount > 99 ? '99+' : itemCount}
                 </span>
               )}

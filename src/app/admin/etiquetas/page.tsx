@@ -70,7 +70,7 @@ export default function EtiquetasPage() {
               </h3>
               <button
                 onClick={selectAll}
-                className="flex items-center gap-2 text-sm text-text-secondary hover:text-accent-amber transition-colors"
+                className="flex items-center gap-2 text-sm text-text-secondary hover:text-accent-green transition-colors"
               >
                 {allSelected ? (
                   <CheckSquare className="h-4 w-4" />
@@ -97,7 +97,7 @@ export default function EtiquetasPage() {
                     className={cn(
                       'flex items-center gap-3 rounded-[--radius-md] p-3 cursor-pointer transition-colors border',
                       isSelected
-                        ? 'border-accent-amber bg-accent-amber/5'
+                        ? 'border-accent-green bg-accent-green/5'
                         : 'border-border-default bg-bg-elevated hover:border-border-hover'
                     )}
                   >
@@ -105,14 +105,14 @@ export default function EtiquetasPage() {
                       type="checkbox"
                       checked={isSelected}
                       onChange={() => toggleSelect(order.id)}
-                      className="h-4 w-4 rounded border-border-default text-accent-amber focus:ring-accent-amber"
+                      className="h-4 w-4 rounded border-border-default text-accent-green focus:ring-accent-green"
                     />
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2">
                         <span className="font-mono text-sm font-semibold text-text-primary">
                           {order.orderNumber}
                         </span>
-                        <Badge variant={order.status === 'enviado' ? 'green' : 'amber'}>
+                        <Badge variant={order.status === 'enviado' ? 'green' : 'olive'}>
                           {order.status === 'enviado' ? 'Enviado' : 'Em Separação'}
                         </Badge>
                       </div>
@@ -233,7 +233,7 @@ export default function EtiquetasPage() {
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-[10px] uppercase tracking-wider text-text-muted mb-0.5">Rastreio</p>
-                    <p className="font-mono text-sm font-semibold text-accent-amber">
+                    <p className="font-mono text-sm font-semibold text-accent-green">
                       {order.trackingCode || generateTrackingCode()}
                     </p>
                   </div>

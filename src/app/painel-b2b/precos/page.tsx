@@ -60,7 +60,7 @@ export default function TabelaPrecosPage() {
             <h3 className="font-display text-lg text-text-primary">
               {category}
             </h3>
-            <Badge variant="amber">{items.length}</Badge>
+            <Badge variant="olive">{items.length}</Badge>
           </div>
           <Card padding="none" className="mb-6">
             <Table>
@@ -100,7 +100,7 @@ export default function TabelaPrecosPage() {
                       {product.stock > 20 ? (
                         <Badge variant="green">{product.stock}</Badge>
                       ) : product.stock > 0 ? (
-                        <Badge variant="amber">{product.stock}</Badge>
+                        <Badge variant="olive">{product.stock}</Badge>
                       ) : (
                         <Badge variant="red">Indisponivel</Badge>
                       )}

@@ -47,14 +47,14 @@ export function CategoriesGrid() {
                 className={cn(
                   'group relative flex aspect-[4/3] flex-col justify-end overflow-hidden rounded-[--radius-xl]',
                   'border border-border-default bg-bg-card p-6',
-                  'transition-all hover:border-accent-amber hover:scale-[1.02]'
+                  'transition-all hover:border-accent-green hover:scale-[1.02]'
                 )}
               >
                 {/* Gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-bg-primary/90 via-bg-primary/40 to-transparent" />
 
                 <div className="relative z-10">
-                  <span className="inline-block rounded-[--radius-pill] bg-accent-amber/10 px-3 py-1 text-xs font-medium text-accent-amber">
+                  <span className="inline-block rounded-[--radius-pill] bg-accent-green/10 px-3 py-1 text-xs font-medium text-accent-green">
                     {category.productCount} produtos
                   </span>
                   <h3 className="mt-2 font-display text-xl font-semibold text-text-primary">

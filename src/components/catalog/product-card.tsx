@@ -14,7 +14,7 @@ function stockBadge(stock: number) {
   if (stock > 10)
     return <Badge variant="green">Em estoque</Badge>
   if (stock >= 1)
-    return <Badge variant="amber">Últimas unidades</Badge>
+    return <Badge variant="olive">Últimas unidades</Badge>
   return <Badge variant="red">Indisponível</Badge>
 }
 
@@ -51,7 +51,7 @@ function ProductCard({ product }: ProductCardProps) {
       transition={{ type: 'spring', stiffness: 300, damping: 20 }}
     >
       <Link href={`/produto/${product.slug}`} className="block h-full">
-        <div className="group flex h-full flex-col overflow-hidden rounded-[--radius-xl] border border-border-default bg-bg-card transition-colors duration-200 hover:border-accent-amber">
+        <div className="group flex h-full flex-col overflow-hidden rounded-[--radius-xl] border border-border-default bg-bg-card transition-colors duration-200 hover:border-accent-green">
           {/* Image */}
           <div className="relative aspect-square bg-bg-elevated">
             <div className="flex h-full w-full items-center justify-center">

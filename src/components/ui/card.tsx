@@ -20,7 +20,7 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
       <div
         ref={ref}
         className={cn(
-          'bg-bg-card border border-border-default rounded-[--radius-xl] transition-colors duration-200 hover:border-border-hover',
+          'bg-bg-card border border-border-default rounded-[--radius-xl] shadow-sm transition-all duration-200 hover:border-border-hover hover:shadow-md',
           paddingMap[padding],
           className
         )}

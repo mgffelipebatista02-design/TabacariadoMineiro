@@ -10,9 +10,9 @@ import { useAuth } from '@/contexts/auth-context'
 import { formatCNPJ } from '@/lib/utils'
 import type { CustomerB2B } from '@/types'
 
-const PRICE_GROUP_BADGE: Record<string, { label: string; variant: 'amber' | 'green' | 'blue' }> = {
+const PRICE_GROUP_BADGE: Record<string, { label: string; variant: 'olive' | 'green' | 'blue' }> = {
   standard: { label: 'Standard', variant: 'blue' },
-  premium: { label: 'Premium', variant: 'amber' },
+  premium: { label: 'Premium', variant: 'olive' },
   vip: { label: 'VIP', variant: 'green' },
 }
 

@@ -44,8 +44,8 @@ function Stepper({ steps, currentStep, orientation = 'horizontal', className }: 
               <div
                 className={cn(
                   'flex h-8 w-8 shrink-0 items-center justify-center rounded-full border-2 text-sm font-medium transition-colors duration-200',
-                  isCompleted && 'border-accent-amber bg-accent-amber text-bg-primary',
-                  isActive && 'border-accent-amber text-accent-amber bg-transparent',
+                  isCompleted && 'border-accent-green bg-accent-green text-bg-primary',
+                  isActive && 'border-accent-green text-accent-green bg-transparent',
                   !isCompleted && !isActive && 'border-border-default text-text-muted bg-transparent'
                 )}
               >
@@ -66,7 +66,7 @@ function Stepper({ steps, currentStep, orientation = 'horizontal', className }: 
                     isHorizontal
                       ? 'h-0.5 flex-1 mx-2'
                       : 'w-0.5 h-6 my-1',
-                    isCompleted ? 'bg-accent-amber' : 'bg-border-default'
+                    isCompleted ? 'bg-accent-green' : 'bg-border-default'
                   )}
                 />
               )}
@@ -77,7 +77,7 @@ function Stepper({ steps, currentStep, orientation = 'horizontal', className }: 
               className={cn(
                 'text-xs font-medium transition-colors duration-200',
                 isHorizontal ? 'mt-2 text-center' : 'ml-3 mt-1',
-                isCompleted && 'text-accent-amber',
+                isCompleted && 'text-accent-green',
                 isActive && 'text-text-primary',
                 !isCompleted && !isActive && 'text-text-muted'
               )}

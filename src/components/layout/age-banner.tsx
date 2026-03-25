@@ -41,7 +41,7 @@ export function AgeBanner() {
           transition={{ type: 'spring', damping: 25, stiffness: 300 }}
           className={cn(
             'fixed bottom-0 left-0 right-0 z-40',
-            'bg-accent-amber text-bg-primary',
+            'bg-accent-green text-bg-primary',
             'px-4 py-3'
           )}
         >
@@ -49,7 +49,7 @@ export function AgeBanner() {
             <p className="text-sm font-medium">{AGE_BANNER_TEXT}</p>
             <button
               onClick={handleDismiss}
-              className="flex-shrink-0 rounded-[--radius-sm] p-1 hover:bg-accent-amber-dark/30 transition-colors"
+              className="flex-shrink-0 rounded-[--radius-sm] p-1 hover:bg-accent-green-dark/30 transition-colors"
               aria-label="Fechar"
             >
               <X className="h-5 w-5" />

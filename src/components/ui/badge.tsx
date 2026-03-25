@@ -9,7 +9,7 @@ const badgeVariants = cva(
   {
     variants: {
       variant: {
-        amber: 'bg-accent-amber/15 text-accent-amber border border-accent-amber/25',
+        olive: 'bg-accent-green/15 text-accent-green border border-accent-green/25',
         green: 'bg-status-success/15 text-status-success border border-status-success/25',
         red: 'bg-status-error/15 text-status-error border border-status-error/25',
         blue: 'bg-status-info/15 text-status-info border border-status-info/25',
@@ -17,7 +17,7 @@ const badgeVariants = cva(
       },
     },
     defaultVariants: {
-      variant: 'amber',
+      variant: 'olive',
     },
   }
 )

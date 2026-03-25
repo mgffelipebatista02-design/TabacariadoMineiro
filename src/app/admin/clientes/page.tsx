@@ -30,7 +30,7 @@ const tabs: { key: FilterTab; label: string }[] = [
 const priceGroupVariant = {
   standard: 'gray' as const,
   premium: 'blue' as const,
-  vip: 'amber' as const,
+  vip: 'olive' as const,
 }
 
 const priceGroupLabel = {
@@ -95,7 +95,7 @@ export default function ClientesPage() {
             className={cn(
               'px-4 py-2 text-sm font-medium rounded-[--radius-md] transition-colors',
               activeTab === tab.key
-                ? 'bg-accent-amber text-bg-primary'
+                ? 'bg-accent-green text-bg-primary'
                 : 'text-text-secondary hover:text-text-primary'
             )}
           >

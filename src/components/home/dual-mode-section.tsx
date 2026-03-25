@@ -60,12 +60,12 @@ export function DualModeSection() {
                 transition={{ duration: 0.6, delay: index * 0.15 }}
                 className={cn(
                   'group flex flex-col rounded-[--radius-xl] border border-border-default bg-bg-card p-8',
-                  'transition-colors hover:border-accent-amber'
+                  'transition-colors hover:border-accent-green'
                 )}
               >
                 <div className="flex items-center gap-4">
                   <div className="flex h-12 w-12 items-center justify-center rounded-[--radius-lg] bg-bg-elevated">
-                    <Icon className="h-6 w-6 text-accent-amber" />
+                    <Icon className="h-6 w-6 text-accent-green" />
                   </div>
                   <h3 className="font-display text-xl font-semibold text-text-primary">
                     {card.title}
@@ -75,7 +75,7 @@ export function DualModeSection() {
                 <ul className="mt-8 flex-1 space-y-4">
                   {card.features.map((feature) => (
                     <li key={feature} className="flex items-center gap-3 text-text-secondary">
-                      <Check className="h-4 w-4 shrink-0 text-accent-amber" />
+                      <Check className="h-4 w-4 shrink-0 text-accent-green" />
                       <span>{feature}</span>
                     </li>
                   ))}
@@ -86,7 +86,7 @@ export function DualModeSection() {
                   className={cn(
                     'mt-8 inline-flex items-center justify-center rounded-[--radius-md] px-6 py-3',
                     'border border-border-default font-medium text-text-primary',
-                    'transition-colors hover:border-accent-amber hover:text-accent-amber'
+                    'transition-colors hover:border-accent-green hover:text-accent-green'
                   )}
                 >
                   {card.cta}

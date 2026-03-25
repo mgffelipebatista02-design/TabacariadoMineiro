@@ -23,14 +23,14 @@ import { Card } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 
 const CHART_COLORS = {
-  amber: '#F59E0B',
+  primary: '#5B7A34',
   blue: '#3B82F6',
   green: '#22C55E',
   red: '#EF4444',
   gray: '#6B7280',
 }
 
-const PIE_COLORS = [CHART_COLORS.amber, CHART_COLORS.blue]
+const PIE_COLORS = [CHART_COLORS.primary, CHART_COLORS.blue]
 
 const periods = ['7d', '30d', '90d', '12m'] as const
 
@@ -107,7 +107,7 @@ export default function DashboardPage() {
               className={cn(
                 'px-3 py-1.5 text-xs font-medium rounded-[--radius-md] transition-colors',
                 selectedPeriod === p
-                  ? 'bg-accent-amber text-bg-primary'
+                  ? 'bg-accent-green text-bg-primary'
                   : 'text-text-secondary hover:text-text-primary'
               )}
             >
@@ -155,18 +155,18 @@ export default function DashboardPage() {
           <div className="h-72">
             <ResponsiveContainer width="100%" height="100%">
               <LineChart data={adminMetrics.revenueByMonth}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#262626" />
+                <CartesianGrid strokeDasharray="3 3" stroke="#D4DCC4" />
                 <XAxis
                   dataKey="month"
-                  tick={{ fill: '#A3A3A3', fontSize: 11 }}
+                  tick={{ fill: '#5A6B4A', fontSize: 11 }}
                   tickLine={false}
-                  axisLine={{ stroke: '#262626' }}
+                  axisLine={{ stroke: '#D4DCC4' }}
                   tickFormatter={(v: string) => v.split('/')[0]}
                 />
                 <YAxis
-                  tick={{ fill: '#A3A3A3', fontSize: 11 }}
+                  tick={{ fill: '#5A6B4A', fontSize: 11 }}
                   tickLine={false}
-                  axisLine={{ stroke: '#262626' }}
+                  axisLine={{ stroke: '#D4DCC4' }}
                   tickFormatter={(v: number) => `${(v / 1000).toFixed(0)}k`}
                 />
                 <Tooltip content={<ChartTooltip />} />
@@ -174,9 +174,9 @@ export default function DashboardPage() {
                   type="monotone"
                   dataKey="revenue"
                   name="Faturamento"
-                  stroke={CHART_COLORS.amber}
+                  stroke={CHART_COLORS.primary}
                   strokeWidth={2}
-                  dot={{ fill: CHART_COLORS.amber, r: 4 }}
+                  dot={{ fill: CHART_COLORS.primary, r: 4 }}
                   activeDot={{ r: 6 }}
                 />
               </LineChart>
@@ -192,24 +192,24 @@ export default function DashboardPage() {
           <div className="h-72">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={topProducts} layout="vertical">
-                <CartesianGrid strokeDasharray="3 3" stroke="#262626" horizontal={false} />
+                <CartesianGrid strokeDasharray="3 3" stroke="#D4DCC4" horizontal={false} />
                 <XAxis
                   type="number"
-                  tick={{ fill: '#A3A3A3', fontSize: 11 }}
+                  tick={{ fill: '#5A6B4A', fontSize: 11 }}
                   tickLine={false}
-                  axisLine={{ stroke: '#262626' }}
+                  axisLine={{ stroke: '#D4DCC4' }}
                 />
                 <YAxis
                   type="category"
                   dataKey="name"
-                  tick={{ fill: '#A3A3A3', fontSize: 10 }}
+                  tick={{ fill: '#5A6B4A', fontSize: 10 }}
                   tickLine={false}
-                  axisLine={{ stroke: '#262626' }}
+                  axisLine={{ stroke: '#D4DCC4' }}
                   width={130}
                   tickFormatter={(v: string) => v.length > 20 ? v.slice(0, 18) + '...' : v}
                 />
                 <Tooltip content={<ChartTooltip />} />
-                <Bar dataKey="quantity" name="Quantidade" fill={CHART_COLORS.amber} radius={[0, 4, 4, 0]} />
+                <Bar dataKey="quantity" name="Quantidade" fill={CHART_COLORS.primary} radius={[0, 4, 4, 0]} />
               </BarChart>
             </ResponsiveContainer>
           </div>
@@ -250,7 +250,7 @@ export default function DashboardPage() {
         {/* Low stock alerts */}
         <Card padding="lg">
           <div className="flex items-center gap-2 mb-4">
-            <AlertTriangle className="h-5 w-5 text-accent-amber" />
+            <AlertTriangle className="h-5 w-5 text-accent-green" />
             <h3 className="font-display text-base font-semibold text-text-primary">
               Estoque Baixo
             </h3>
@@ -262,7 +262,7 @@ export default function DashboardPage() {
                 className="flex items-center justify-between rounded-[--radius-md] bg-bg-elevated p-3"
               >
                 <span className="text-sm text-text-primary">{product.name}</span>
-                <Badge variant={product.stock <= 5 ? 'red' : 'amber'}>
+                <Badge variant={product.stock <= 5 ? 'red' : 'olive'}>
                   {product.stock} un.
                 </Badge>
               </div>

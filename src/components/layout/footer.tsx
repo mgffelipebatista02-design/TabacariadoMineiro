@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { cn } from '@/lib/utils'
 import { SITE_NAME, ANVISA_NOTICE } from '@/lib/constants'
 
@@ -15,9 +16,18 @@ export function Footer() {
           <div className="space-y-4">
             <Link
               href="/"
-              className="font-display text-xl font-bold text-accent-amber"
+              className="flex items-center gap-3 transition-opacity hover:opacity-80"
             >
-              {SITE_NAME}
+              <Image
+                src="/images/logo-badge.jpg"
+                alt="Tabacaria do Mineiro"
+                width={56}
+                height={56}
+                className="rounded-full"
+              />
+              <span className="font-display text-lg font-bold text-accent-green">
+                {SITE_NAME}
+              </span>
             </Link>
             <p className="text-sm leading-relaxed text-text-secondary">
               Tabacaria especializada em produtos premium para varejo e atacado.
@@ -33,19 +43,19 @@ export function Footer() {
             <nav className="flex flex-col gap-2">
               <Link
                 href="/catalogo"
-                className="text-sm text-text-secondary hover:text-accent-amber transition-colors"
+                className="text-sm text-text-secondary hover:text-accent-green transition-colors"
               >
                 Catálogo
               </Link>
               <Link
                 href="/sobre"
-                className="text-sm text-text-secondary hover:text-accent-amber transition-colors"
+                className="text-sm text-text-secondary hover:text-accent-green transition-colors"
               >
                 Sobre
               </Link>
               <Link
                 href="/contato"
-                className="text-sm text-text-secondary hover:text-accent-amber transition-colors"
+                className="text-sm text-text-secondary hover:text-accent-green transition-colors"
               >
                 Contato
               </Link>
@@ -60,19 +70,19 @@ export function Footer() {
             <nav className="flex flex-col gap-2">
               <Link
                 href="/politica-de-privacidade"
-                className="text-sm text-text-secondary hover:text-accent-amber transition-colors"
+                className="text-sm text-text-secondary hover:text-accent-green transition-colors"
               >
                 Política de Privacidade
               </Link>
               <Link
                 href="/termos-de-uso"
-                className="text-sm text-text-secondary hover:text-accent-amber transition-colors"
+                className="text-sm text-text-secondary hover:text-accent-green transition-colors"
               >
                 Termos de Uso
               </Link>
               <Link
                 href="/compliance"
-                className="text-sm text-text-secondary hover:text-accent-amber transition-colors"
+                className="text-sm text-text-secondary hover:text-accent-green transition-colors"
               >
                 Compliance
               </Link>
@@ -111,8 +121,8 @@ export function Footer() {
 
           <span
             className={cn(
-              'inline-flex items-center justify-center rounded-[--radius-md] border-2 border-accent-amber',
-              'px-3 py-1 text-sm font-bold text-accent-amber'
+              'inline-flex items-center justify-center rounded-[--radius-md] border-2 border-accent-green',
+              'px-3 py-1 text-sm font-bold text-accent-green'
             )}
           >
             +18

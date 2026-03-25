@@ -17,12 +17,12 @@ import {
 import { orders } from '@/data/orders'
 import { formatBRL } from '@/lib/utils'
 
-const STATUS_BADGE_MAP: Record<string, { label: string; variant: 'amber' | 'green' | 'red' | 'blue' | 'gray' }> = {
+const STATUS_BADGE_MAP: Record<string, { label: string; variant: 'olive' | 'green' | 'red' | 'blue' | 'gray' }> = {
   pendente: { label: 'Pendente', variant: 'gray' },
   confirmado: { label: 'Confirmado', variant: 'blue' },
-  em_separacao: { label: 'Em Separacao', variant: 'amber' },
+  em_separacao: { label: 'Em Separacao', variant: 'olive' },
   enviado: { label: 'Enviado', variant: 'blue' },
-  em_transito: { label: 'Em Transito', variant: 'amber' },
+  em_transito: { label: 'Em Transito', variant: 'olive' },
   entregue: { label: 'Entregue', variant: 'green' },
   cancelado: { label: 'Cancelado', variant: 'red' },
 }
@@ -87,8 +87,8 @@ export default function PainelB2BDashboard() {
                   {metric.value}
                 </p>
               </div>
-              <div className="p-2 bg-accent-amber/10 rounded-[--radius-md]">
-                <metric.icon className="h-5 w-5 text-accent-amber" />
+              <div className="p-2 bg-accent-green/10 rounded-[--radius-md]">
+                <metric.icon className="h-5 w-5 text-accent-green" />
               </div>
             </div>
           </Card>

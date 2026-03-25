@@ -22,7 +22,7 @@ export function DiscountBar({ subtotal, className }: DiscountBarProps) {
       {/* Progress bar */}
       <div className="relative h-2 w-full rounded-[--radius-pill] bg-bg-elevated overflow-hidden">
         <div
-          className="absolute inset-y-0 left-0 rounded-[--radius-pill] bg-accent-amber transition-all duration-500"
+          className="absolute inset-y-0 left-0 rounded-[--radius-pill] bg-accent-green transition-all duration-500"
           style={{ width: `${progress}%` }}
         />
       </div>
@@ -43,14 +43,14 @@ export function DiscountBar({ subtotal, className }: DiscountBarProps) {
                 className={cn(
                   'h-3 w-3 rounded-full border-2 transition-colors duration-200',
                   isActive
-                    ? 'border-accent-amber bg-accent-amber'
+                    ? 'border-accent-green bg-accent-green'
                     : 'border-border-default bg-bg-card'
                 )}
               />
               <span
                 className={cn(
                   'mt-1 font-mono whitespace-nowrap',
-                  isActive ? 'text-accent-amber font-medium' : 'text-text-muted'
+                  isActive ? 'text-accent-green font-medium' : 'text-text-muted'
                 )}
               >
                 {formatBRL(tier.min)}
@@ -58,7 +58,7 @@ export function DiscountBar({ subtotal, className }: DiscountBarProps) {
               <span
                 className={cn(
                   'whitespace-nowrap',
-                  isActive ? 'text-accent-amber' : 'text-text-muted'
+                  isActive ? 'text-accent-green' : 'text-text-muted'
                 )}
               >
                 {tier.discount * 100}%
@@ -72,14 +72,14 @@ export function DiscountBar({ subtotal, className }: DiscountBarProps) {
       {nextTier && (
         <p className="text-xs text-text-secondary mt-6 pt-2">
           Faltam{' '}
-          <span className="font-mono font-medium text-accent-amber">
+          <span className="font-mono font-medium text-accent-green">
             {formatBRL(remaining)}
           </span>{' '}
           para {nextDiscount}% de desconto
         </p>
       )}
       {!nextTier && subtotal > 0 && (
-        <p className="text-xs text-accent-amber mt-6 pt-2 font-medium">
+        <p className="text-xs text-accent-green mt-6 pt-2 font-medium">
           Desconto máximo atingido
         </p>
       )}

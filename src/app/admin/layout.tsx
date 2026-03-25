@@ -61,7 +61,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         {/* Sidebar header */}
         <div className="flex h-16 items-center justify-between border-b border-border-default px-4">
           {!collapsed && (
-            <span className="font-display text-sm font-semibold text-accent-amber truncate">
+            <span className="font-display text-sm font-semibold text-accent-green truncate">
               TBM Admin
             </span>
           )}
@@ -86,7 +86,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                 className={cn(
                   'flex items-center gap-3 rounded-[--radius-md] px-3 py-2.5 text-sm font-medium transition-colors',
                   isActive
-                    ? 'bg-accent-amber/10 text-accent-amber border-l-2 border-accent-amber'
+                    ? 'bg-accent-green/10 text-accent-green border-l-2 border-accent-green'
                     : 'text-text-secondary hover:text-text-primary hover:bg-bg-elevated'
                 )}
                 title={collapsed ? link.label : undefined}
@@ -127,8 +127,8 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             <span className="text-sm text-text-secondary">
               {user.customer?.name ?? 'Admin'}
             </span>
-            <div className="h-8 w-8 rounded-full bg-accent-amber/20 flex items-center justify-center">
-              <span className="text-xs font-semibold text-accent-amber">
+            <div className="h-8 w-8 rounded-full bg-accent-green/20 flex items-center justify-center">
+              <span className="text-xs font-semibold text-accent-green">
                 {(user.customer?.name ?? 'A').charAt(0).toUpperCase()}
               </span>
             </div>

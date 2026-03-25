@@ -107,14 +107,14 @@ export default function PickingPage() {
                       {new Date(order.date).toLocaleDateString('pt-BR')} — {order.items.length} itens ({totalItems} un.)
                     </p>
                   </div>
-                  <Badge variant="amber">Em Separação</Badge>
+                  <Badge variant="olive">Em Separação</Badge>
                 </div>
                 <div className="flex items-center gap-4">
                   {/* Mini progress */}
                   <div className="hidden sm:flex items-center gap-2">
                     <div className="h-2 w-24 rounded-full bg-bg-elevated overflow-hidden">
                       <div
-                        className="h-full rounded-full bg-accent-amber transition-all duration-300"
+                        className="h-full rounded-full bg-accent-green transition-all duration-300"
                         style={{ width: `${progressPercent}%` }}
                       />
                     </div>
@@ -145,7 +145,7 @@ export default function PickingPage() {
                       <div
                         className={cn(
                           'h-full rounded-full transition-all duration-500',
-                          allPicked ? 'bg-status-success' : 'bg-accent-amber'
+                          allPicked ? 'bg-status-success' : 'bg-accent-green'
                         )}
                         style={{ width: `${progressPercent}%` }}
                       />
@@ -168,7 +168,7 @@ export default function PickingPage() {
                             type="checkbox"
                             checked={isPicked}
                             onChange={() => togglePick(order.id, idx)}
-                            className="h-5 w-5 rounded border-border-default text-accent-amber focus:ring-accent-amber accent-amber-500"
+                            className="h-5 w-5 rounded border-border-default text-accent-green focus:ring-accent-green accent-green-500"
                           />
                           <div className="flex-1 min-w-0">
                             <p className={cn('text-sm font-medium', isPicked ? 'line-through text-text-muted' : 'text-text-primary')}>

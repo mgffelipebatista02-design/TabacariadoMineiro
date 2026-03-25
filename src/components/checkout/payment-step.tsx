@@ -61,7 +61,7 @@ export function PaymentStep({ onNext, onBack }: PaymentStepProps) {
             className={cn(
               'px-4 py-2 text-sm font-medium rounded-[--radius-md] border transition-colors duration-200',
               activeMethod === method
-                ? 'border-accent-amber bg-accent-amber/10 text-accent-amber'
+                ? 'border-accent-green bg-accent-green/10 text-accent-green'
                 : 'border-border-default text-text-secondary hover:border-border-hover hover:text-text-primary'
             )}
           >

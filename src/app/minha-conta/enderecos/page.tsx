@@ -197,7 +197,7 @@ export default function EnderecosPage() {
                       {address.label}
                     </span>
                     {address.isDefault && (
-                      <Badge variant="amber">Padrão</Badge>
+                      <Badge variant="olive">Padrão</Badge>
                     )}
                   </div>
                   <p className="text-sm text-text-secondary">

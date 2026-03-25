@@ -16,8 +16,8 @@ export function Confirmation() {
   return (
     <div className="flex flex-col items-center gap-6 py-4">
       {/* Success icon */}
-      <div className="flex h-20 w-20 items-center justify-center rounded-full bg-accent-amber/10">
-        <CheckCircle className="h-12 w-12 text-accent-amber" />
+      <div className="flex h-20 w-20 items-center justify-center rounded-full bg-accent-green/10">
+        <CheckCircle className="h-12 w-12 text-accent-green" />
       </div>
 
       <div className="text-center space-y-1">

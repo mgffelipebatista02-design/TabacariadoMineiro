@@ -132,7 +132,7 @@ export default function LoginPage() {
           Não tem conta?{' '}
           <Link
             href="/cadastro"
-            className="text-accent-amber hover:underline font-medium"
+            className="text-accent-green hover:underline font-medium"
           >
             Cadastre-se
           </Link>

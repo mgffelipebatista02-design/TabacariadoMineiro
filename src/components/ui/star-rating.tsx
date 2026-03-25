@@ -55,7 +55,7 @@ function StarRating({ value, onChange, max = 5, size, className }: StarRatingPro
               className={cn(
                 starSizeVariants({ size }),
                 isFilled
-                  ? 'fill-accent-amber text-accent-amber'
+                  ? 'fill-accent-green text-accent-green'
                   : 'fill-transparent text-text-muted'
               )}
             />

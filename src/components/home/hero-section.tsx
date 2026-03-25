@@ -27,8 +27,8 @@ export function HeroSection() {
         >
           <span
             className={cn(
-              'inline-block rounded-[--radius-pill] border border-accent-amber/40 px-4 py-1.5',
-              'text-sm font-medium text-accent-amber'
+              'inline-block rounded-[--radius-pill] border border-accent-green/40 px-4 py-1.5',
+              'text-sm font-medium text-accent-green'
             )}
           >
             Varejo & Atacado
@@ -43,7 +43,7 @@ export function HeroSection() {
           className="mt-8 font-display text-5xl font-bold tracking-tight text-text-primary md:text-7xl"
         >
           Tabacaria do{' '}
-          <span className="text-accent-amber">Mineiro</span>
+          <span className="text-accent-green">Mineiro</span>
         </motion.h1>
 
         <motion.p
@@ -68,8 +68,8 @@ export function HeroSection() {
             href="/catalogo"
             className={cn(
               'inline-flex items-center justify-center rounded-[--radius-md] px-8 py-3',
-              'bg-accent-amber text-bg-primary font-medium',
-              'transition-colors hover:bg-accent-amber-light'
+              'bg-accent-green text-bg-primary font-medium',
+              'transition-colors hover:bg-accent-green-light'
             )}
           >
             Explorar Catalogo
@@ -79,7 +79,7 @@ export function HeroSection() {
             className={cn(
               'inline-flex items-center justify-center rounded-[--radius-md] px-8 py-3',
               'border border-border-default text-text-primary font-medium',
-              'transition-colors hover:border-accent-amber hover:text-accent-amber'
+              'transition-colors hover:border-accent-green hover:text-accent-green'
             )}
           >
             Pedido Rapido B2B
