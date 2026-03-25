@@ -1,24 +1,24 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg-primary: #F5F7F0;
-  --color-bg-secondary: #EBF0E0;
+  --color-bg-primary: #F2F6EC;
+  --color-bg-secondary: #E4ECD4;
   --color-bg-card: #FFFFFF;
-  --color-bg-elevated: #F0F4E8;
+  --color-bg-elevated: #E8F0DA;
   --color-bg-input: #FFFFFF;
 
-  --color-accent-green: #5B7A34;
-  --color-accent-green-light: #6B8A3E;
-  --color-accent-green-dark: #4A6629;
-  --color-accent-gold: #C8956C;
+  --color-accent-green: #3A7D32;
+  --color-accent-green-light: #4A8D42;
+  --color-accent-green-dark: #2D6B25;
+  --color-accent-gold: #D4A24B;
 
-  --color-text-primary: #1A2E0A;
-  --color-text-secondary: #5A6B4A;
-  --color-text-muted: #8A9878;
+  --color-text-primary: #0F1F05;
+  --color-text-secondary: #3D5228;
+  --color-text-muted: #6B7F58;
 
-  --color-border-default: #D4DCC4;
-  --color-border-hover: #B5C4A0;
-  --color-border-accent: #5B7A34;
+  --color-border-default: #C2D1A8;
+  --color-border-hover: #9AB57E;
+  --color-border-accent: #3A7D32;
 
   --color-status-success: #22C55E;
   --color-status-warning: #EAB308;
@@ -78,7 +78,7 @@
 
   /* Selection color */
   ::selection {
-    background-color: rgba(91, 122, 52, 0.3);
+    background-color: rgba(58, 125, 50, 0.3);
     color: var(--color-text-primary);
   }
 }
