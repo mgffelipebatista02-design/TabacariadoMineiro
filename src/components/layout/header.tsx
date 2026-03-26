@@ -22,8 +22,8 @@ function slugifyCategory(text: string) {
 }
 
 export function Header() {
-  const { mode, toggleMode } = useMode()
-  const { items } = useCart()
+  const { mode, toggleMode, hydrated: modeHydrated } = useMode()
+  const { items, hydrated: cartHydrated } = useCart()
   const { user } = useAuth()
 
   const [searchOpen, setSearchOpen] = useState(false)
@@ -31,6 +31,7 @@ export function Header() {
   const [categoriesOpen, setCategoriesOpen] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
 
+  const hydrated = modeHydrated && cartHydrated
   const itemCount = items.reduce((sum, item) => sum + item.quantity, 0)
   const isB2B = mode === 'b2b'
 
@@ -119,7 +120,7 @@ export function Header() {
               )}
             </div>
 
-            {isB2B && (
+            {hydrated && isB2B && (
               <Link
                 href="/pedido-rapido"
                 className="text-sm text-text-secondary hover:text-text-primary transition-colors"
@@ -134,6 +135,7 @@ export function Header() {
             {/* Mode Toggle */}
             <button
               onClick={toggleMode}
+              suppressHydrationWarning
               className={cn(
                 'hidden items-center gap-2 rounded-[--radius-pill] border px-3 py-1.5 text-xs font-medium transition-colors md:flex',
                 isB2B
@@ -142,12 +144,13 @@ export function Header() {
               )}
             >
               <span
+                suppressHydrationWarning
                 className={cn(
                   'h-2 w-2 rounded-full',
                   isB2B ? 'bg-accent-green' : 'bg-text-muted'
                 )}
               />
-              {isB2B ? 'Atacado' : 'Varejo'}
+              {hydrated ? (isB2B ? 'Atacado' : 'Varejo') : 'Varejo'}
             </button>
 
             {/* Search */}
@@ -166,7 +169,7 @@ export function Header() {
               aria-label="Carrinho"
             >
               <ShoppingCart className="h-5 w-5" />
-              {itemCount > 0 && (
+              {hydrated && itemCount > 0 && (
                 <span className="absolute -right-1 -top-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-accent-green px-1 text-[10px] font-bold text-bg-primary">
                   {itemCount > 99 ? '99+' : itemCount}
                 </span>
@@ -175,9 +178,9 @@ export function Header() {
 
             {/* User */}
             <Link
-              href={user.isAuthenticated ? '/minha-conta' : '/login'}
+              href={hydrated && user.isAuthenticated ? '/minha-conta' : '/login'}
               className="flex h-9 w-9 items-center justify-center rounded-[--radius-md] text-text-secondary hover:bg-bg-card hover:text-text-primary transition-colors"
-              aria-label={user.isAuthenticated ? 'Minha Conta' : 'Entrar'}
+              aria-label={hydrated && user.isAuthenticated ? 'Minha Conta' : 'Entrar'}
             >
               <User className="h-5 w-5" />
             </Link>

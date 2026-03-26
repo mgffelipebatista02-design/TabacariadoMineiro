@@ -7,6 +7,7 @@ interface ModeContextValue {
   mode: Mode
   toggleMode: () => void
   setMode: (mode: Mode) => void
+  hydrated: boolean
 }
 
 export const ModeContext = createContext<ModeContextValue | undefined>(undefined)
@@ -40,7 +41,7 @@ export function ModeProvider({ children }: { children: ReactNode }) {
   }, [])
 
   return (
-    <ModeContext.Provider value={{ mode, toggleMode, setMode }}>
+    <ModeContext.Provider value={{ mode, toggleMode, setMode, hydrated }}>
       {children}
     </ModeContext.Provider>
   )

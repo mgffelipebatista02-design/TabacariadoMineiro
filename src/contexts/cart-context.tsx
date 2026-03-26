@@ -25,6 +25,7 @@ interface CartContextValue {
   setShipping: (value: number) => void
   total: number
   b2bMinOrderMet: boolean
+  hydrated: boolean
 }
 
 export const CartContext = createContext<CartContextValue | undefined>(undefined)
@@ -161,6 +162,7 @@ export function CartProvider({
         setShipping,
         total,
         b2bMinOrderMet,
+        hydrated,
       }}
     >
       {children}

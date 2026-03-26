@@ -8,6 +8,7 @@ import { AuthProvider } from '@/contexts/auth-context'
 import { Header } from '@/components/layout/header'
 import { Footer } from '@/components/layout/footer'
 import { AgeBanner } from '@/components/layout/age-banner'
+import { AgeGate } from '@/components/layout/age-gate'
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -39,14 +40,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR" data-scroll-behavior="smooth" className={`${playfair.variable} ${dmSans.variable} ${jetbrainsMono.variable}`} suppressHydrationWarning>
-      <body className="font-body antialiased">
+      <body className="font-body antialiased" suppressHydrationWarning>
         <AuthProvider>
           <ModeProvider>
             <CartProvider>
-              <Header />
-              <main className="min-h-screen">{children}</main>
-              <Footer />
-              <AgeBanner />
+              <AgeGate>
+                <Header />
+                <main className="min-h-screen">{children}</main>
+                <Footer />
+                <AgeBanner />
+              </AgeGate>
             </CartProvider>
           </ModeProvider>
         </AuthProvider>
