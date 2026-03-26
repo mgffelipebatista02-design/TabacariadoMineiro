@@ -60,10 +60,10 @@ src/
 
 Cores são usadas como classes Tailwind diretamente (ex: `bg-bg-primary`, `text-accent-green`, `border-border-default`):
 
-- **Backgrounds:** `bg-primary` (#F5F7F0), `bg-secondary` (#EBF0E0), `bg-card` (#FFFFFF), `bg-elevated` (#F0F4E8), `bg-input` (#FFFFFF)
-- **Accent:** `accent-green` (#5B7A34), `accent-green-light` (#6B8A3E), `accent-green-dark` (#4A6629), `accent-gold` (#C8956C)
-- **Text:** `text-primary` (#1A2E0A), `text-secondary` (#5A6B4A), `text-muted` (#8A9878)
-- **Borders:** `border-default` (#D4DCC4), `border-hover` (#B5C4A0), `border-accent` (#5B7A34)
+- **Backgrounds:** `bg-primary` (#F2F6EC), `bg-secondary` (#E4ECD4), `bg-card` (#FFFFFF), `bg-elevated` (#E8F0DA), `bg-input` (#FFFFFF)
+- **Accent:** `accent-green` (#3A7D32), `accent-green-light` (#4A8D42), `accent-green-dark` (#2D6B25), `accent-gold` (#D4A24B)
+- **Text:** `text-primary` (#0F1F05), `text-secondary` (#3D5228), `text-muted` (#6B7F58)
+- **Borders:** `border-default` (#C2D1A8), `border-hover` (#9AB57E), `border-accent` (#3A7D32)
 - **Status:** `status-success` (#22C55E), `status-warning`, `status-error` (#EF4444), `status-info`
 - **Fonts:** `font-display` (Playfair Display), `font-body` (DM Sans), `font-mono` (JetBrains Mono)
 - **Radius:** `rounded-[--radius-sm]` (6px), `rounded-[--radius-md]` (8px), `rounded-[--radius-lg]` (12px), `rounded-[--radius-xl]` (16px), `rounded-[--radius-pill]` (100px)

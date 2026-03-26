@@ -23,7 +23,7 @@ import { Card } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 
 const CHART_COLORS = {
-  primary: '#5B7A34',
+  primary: '#3A7D32',
   blue: '#3B82F6',
   green: '#22C55E',
   red: '#EF4444',
@@ -155,18 +155,18 @@ export default function DashboardPage() {
           <div className="h-72">
             <ResponsiveContainer width="100%" height="100%">
               <LineChart data={adminMetrics.revenueByMonth}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#D4DCC4" />
+                <CartesianGrid strokeDasharray="3 3" stroke="#C2D1A8" />
                 <XAxis
                   dataKey="month"
-                  tick={{ fill: '#5A6B4A', fontSize: 11 }}
+                  tick={{ fill: '#3D5228', fontSize: 11 }}
                   tickLine={false}
-                  axisLine={{ stroke: '#D4DCC4' }}
+                  axisLine={{ stroke: '#C2D1A8' }}
                   tickFormatter={(v: string) => v.split('/')[0]}
                 />
                 <YAxis
-                  tick={{ fill: '#5A6B4A', fontSize: 11 }}
+                  tick={{ fill: '#3D5228', fontSize: 11 }}
                   tickLine={false}
-                  axisLine={{ stroke: '#D4DCC4' }}
+                  axisLine={{ stroke: '#C2D1A8' }}
                   tickFormatter={(v: number) => `${(v / 1000).toFixed(0)}k`}
                 />
                 <Tooltip content={<ChartTooltip />} />
@@ -192,19 +192,19 @@ export default function DashboardPage() {
           <div className="h-72">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={topProducts} layout="vertical">
-                <CartesianGrid strokeDasharray="3 3" stroke="#D4DCC4" horizontal={false} />
+                <CartesianGrid strokeDasharray="3 3" stroke="#C2D1A8" horizontal={false} />
                 <XAxis
                   type="number"
-                  tick={{ fill: '#5A6B4A', fontSize: 11 }}
+                  tick={{ fill: '#3D5228', fontSize: 11 }}
                   tickLine={false}
-                  axisLine={{ stroke: '#D4DCC4' }}
+                  axisLine={{ stroke: '#C2D1A8' }}
                 />
                 <YAxis
                   type="category"
                   dataKey="name"
-                  tick={{ fill: '#5A6B4A', fontSize: 10 }}
+                  tick={{ fill: '#3D5228', fontSize: 10 }}
                   tickLine={false}
-                  axisLine={{ stroke: '#D4DCC4' }}
+                  axisLine={{ stroke: '#C2D1A8' }}
                   width={130}
                   tickFormatter={(v: string) => v.length > 20 ? v.slice(0, 18) + '...' : v}
                 />
