@@ -1,7 +1,6 @@
 'use client'
 
 import Link from 'next/link'
-import { Package } from 'lucide-react'
 import { motion } from 'framer-motion'
 import type { Product } from '@/types'
 import { useMode } from '@/hooks/use-mode'
@@ -9,6 +8,7 @@ import { useCart } from '@/hooks/use-cart'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { PriceDisplay } from '@/components/ui/price-display'
+import { ProductImage } from '@/components/catalog/product-image'
 
 function stockBadge(stock: number) {
   if (stock > 10)
@@ -53,10 +53,13 @@ function ProductCard({ product }: ProductCardProps) {
       <Link href={`/produto/${product.slug}`} className="block h-full">
         <div className="group flex h-full flex-col overflow-hidden rounded-[--radius-xl] border border-border-default bg-bg-card transition-colors duration-200 hover:border-accent-green">
           {/* Image */}
-          <div className="relative aspect-square bg-bg-elevated">
-            <div className="flex h-full w-full items-center justify-center">
-              <Package className="h-12 w-12 text-text-muted" />
-            </div>
+          <div className="relative aspect-square bg-bg-elevated overflow-hidden">
+            <ProductImage
+              src={product.images[0] ?? ''}
+              alt={product.name}
+              category={product.category}
+              size="md"
+            />
             <div className="absolute right-2 top-2">
               {stockBadge(product.stock)}
             </div>

@@ -4,6 +4,7 @@ import { useMemo, useState } from 'react'
 import { useParams } from 'next/navigation'
 import Link from 'next/link'
 import { ChevronRight, Home, Package } from 'lucide-react'
+import { ProductImage } from '@/components/catalog/product-image'
 import { motion } from 'framer-motion'
 import * as Tabs from '@radix-ui/react-tabs'
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -179,9 +180,12 @@ export default function ProdutoPage() {
           >
             {imageSlides.map((i) => (
               <SwiperSlide key={i}>
-                <div className="flex h-full w-full items-center justify-center bg-bg-elevated">
-                  <Package className="h-20 w-20 text-text-muted" />
-                </div>
+                <ProductImage
+                  src={product.images[i] ?? product.images[0] ?? ''}
+                  alt={`${product.name} - imagem ${i + 1}`}
+                  category={product.category}
+                  size="lg"
+                />
               </SwiperSlide>
             ))}
           </Swiper>
@@ -196,8 +200,13 @@ export default function ProdutoPage() {
           >
             {imageSlides.map((i) => (
               <SwiperSlide key={i}>
-                <div className="flex aspect-square cursor-pointer items-center justify-center rounded-[--radius-md] border border-border-default bg-bg-elevated transition-colors hover:border-accent-green">
-                  <Package className="h-8 w-8 text-text-muted" />
+                <div className="aspect-square cursor-pointer overflow-hidden rounded-[--radius-md] border border-border-default bg-bg-elevated transition-colors hover:border-accent-green">
+                  <ProductImage
+                    src={product.images[i] ?? product.images[0] ?? ''}
+                    alt={`${product.name} - miniatura ${i + 1}`}
+                    category={product.category}
+                    size="sm"
+                  />
                 </div>
               </SwiperSlide>
             ))}
@@ -258,6 +267,16 @@ export default function ProdutoPage() {
               Quantidade mínima: {product.minQtyB2B} {product.unitB2B}(s)
             </p>
           )}
+
+          {/* Descrição visível */}
+          <div className="mt-4 rounded-[--radius-lg] border border-border-default bg-bg-elevated p-4">
+            <h2 className="mb-2 text-sm font-semibold text-text-primary font-display">
+              Descrição
+            </h2>
+            <p className="text-sm text-text-secondary font-body leading-relaxed">
+              {product.description}
+            </p>
+          </div>
         </div>
       </motion.div>
 
