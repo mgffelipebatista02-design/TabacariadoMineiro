@@ -1,6 +1,6 @@
 'use client'
 
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { useParams } from 'next/navigation'
 import Link from 'next/link'
 import { ChevronRight, Home, Package } from 'lucide-react'
@@ -60,6 +60,7 @@ export default function ProdutoPage() {
   const params = useParams<{ slug: string }>()
   const { mode } = useMode()
   const { addItem } = useCart()
+  const [mounted, setMounted] = useState(false)
 
   const product = useMemo(
     () => products.find((p) => p.slug === params.slug),
@@ -70,6 +71,10 @@ export default function ProdutoPage() {
   const minQty = product ? (isB2B ? product.minQtyB2B : 1) : 1
   const [quantity, setQuantity] = useState(minQty)
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null)
+
+  // Mount guard — Swiper injects dynamic attributes that cause hydration mismatch
+  useEffect(() => setMounted(true), [])
+
 
   const category = useMemo(
     () => categories.find((c) => c.name === product?.category),
@@ -172,45 +177,51 @@ export default function ProdutoPage() {
       >
         {/* Left: Gallery */}
         <div className="flex flex-col gap-3">
-          <Swiper
-            modules={[Thumbs, Navigation]}
-            thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null }}
-            navigation
-            className="aspect-square w-full overflow-hidden rounded-[--radius-xl] border border-border-default bg-bg-elevated"
-          >
-            {imageSlides.map((i) => (
-              <SwiperSlide key={i}>
-                <ProductImage
-                  src={product.images[i] ?? product.images[0] ?? ''}
-                  alt={`${product.name} - imagem ${i + 1}`}
-                  category={product.category}
-                  size="lg"
-                />
-              </SwiperSlide>
-            ))}
-          </Swiper>
+          {mounted ? (
+            <>
+              <Swiper
+                modules={[Thumbs, Navigation]}
+                thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null }}
+                navigation
+                className="aspect-square w-full overflow-hidden rounded-[--radius-xl] border border-border-default bg-bg-elevated"
+              >
+                {imageSlides.map((i) => (
+                  <SwiperSlide key={i}>
+                    <ProductImage
+                      src={product.images[i] ?? product.images[0] ?? ''}
+                      alt={`${product.name} - imagem ${i + 1}`}
+                      category={product.category}
+                      size="lg"
+                    />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
 
-          <Swiper
-            onSwiper={setThumbsSwiper}
-            modules={[Thumbs]}
-            slidesPerView={4}
-            spaceBetween={8}
-            watchSlidesProgress
-            className="w-full"
-          >
-            {imageSlides.map((i) => (
-              <SwiperSlide key={i}>
-                <div className="aspect-square cursor-pointer overflow-hidden rounded-[--radius-md] border border-border-default bg-bg-elevated transition-colors hover:border-accent-green">
-                  <ProductImage
-                    src={product.images[i] ?? product.images[0] ?? ''}
-                    alt={`${product.name} - miniatura ${i + 1}`}
-                    category={product.category}
-                    size="sm"
-                  />
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+              <Swiper
+                onSwiper={setThumbsSwiper}
+                modules={[Thumbs]}
+                slidesPerView={4}
+                spaceBetween={8}
+                watchSlidesProgress
+                className="w-full"
+              >
+                {imageSlides.map((i) => (
+                  <SwiperSlide key={i}>
+                    <div className="aspect-square cursor-pointer overflow-hidden rounded-[--radius-md] border border-border-default bg-bg-elevated transition-colors hover:border-accent-green">
+                      <ProductImage
+                        src={product.images[i] ?? product.images[0] ?? ''}
+                        alt={`${product.name} - miniatura ${i + 1}`}
+                        category={product.category}
+                        size="sm"
+                      />
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </>
+          ) : (
+            <div className="aspect-square w-full rounded-[--radius-xl] border border-border-default bg-bg-elevated animate-pulse" />
+          )}
         </div>
 
         {/* Right: Product info */}

@@ -24,10 +24,10 @@ interface MobileNavProps {
 }
 
 export function MobileNav({ isOpen, onClose }: MobileNavProps) {
-  const { mode, toggleMode } = useMode()
+  const { mode, toggleMode, hydrated: modeHydrated } = useMode()
   const { user } = useAuth()
 
-  const isB2B = mode === 'b2b'
+  const isB2B = modeHydrated && mode === 'b2b'
 
   return (
     <AnimatePresence>
@@ -120,11 +120,12 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
                 )}
 
                 <Link
-                  href={user.isAuthenticated ? '/minha-conta' : '/login'}
+                  href={modeHydrated && user.isAuthenticated ? '/minha-conta' : '/login'}
                   onClick={onClose}
                   className="block rounded-[--radius-md] px-3 py-2.5 text-sm font-medium text-text-primary hover:bg-bg-card transition-colors"
+                  suppressHydrationWarning
                 >
-                  {user.isAuthenticated ? 'Minha Conta' : 'Login'}
+                  {modeHydrated && user.isAuthenticated ? 'Minha Conta' : 'Login'}
                 </Link>
               </div>
             </nav>
@@ -133,6 +134,7 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
             <div className="border-t border-border-default px-4 py-4">
               <button
                 onClick={toggleMode}
+                suppressHydrationWarning
                 className={cn(
                   'flex w-full items-center justify-center gap-2 rounded-[--radius-md] border px-4 py-2.5 text-sm font-medium transition-colors',
                   isB2B
@@ -141,12 +143,13 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
                 )}
               >
                 <span
+                  suppressHydrationWarning
                   className={cn(
                     'h-2 w-2 rounded-full',
                     isB2B ? 'bg-accent-green' : 'bg-text-muted'
                   )}
                 />
-                {isB2B ? 'Modo Atacado' : 'Modo Varejo'}
+                {modeHydrated ? (isB2B ? 'Modo Atacado' : 'Modo Varejo') : 'Modo Varejo'}
               </button>
             </div>
           </motion.div>

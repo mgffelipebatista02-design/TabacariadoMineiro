@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -16,6 +16,19 @@ import { cn } from '@/lib/utils'
 
 export function BannerCarousel() {
   const [activeIndex, setActiveIndex] = useState(0)
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => setMounted(true), [])
+
+  // Render placeholder on server and first client render to avoid hydration mismatch
+  // (Swiper injects dynamic attributes that differ between server and client)
+  if (!mounted) {
+    return (
+      <section className="relative pt-[72px]">
+        <div className="aspect-[16/9] md:aspect-[21/9] w-full bg-bg-elevated animate-shimmer" />
+      </section>
+    )
+  }
 
   return (
     <section className="relative pt-[72px]">

@@ -10,10 +10,14 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Input } from '@/components/ui/input'
 
-function generateTrackingCode() {
+function generateTrackingCode(orderId: string) {
   const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
   let code = 'BR'
-  for (let i = 0; i < 9; i++) code += chars[Math.floor(Math.random() * chars.length)]
+  // Derive a deterministic code from the orderId to avoid hydration mismatch
+  for (let i = 0; i < 9; i++) {
+    const charCode = orderId.charCodeAt(i % orderId.length) + i
+    code += chars[charCode % chars.length]
+  }
   code += 'CD'
   return code
 }
@@ -234,7 +238,7 @@ export default function EtiquetasPage() {
                   <div>
                     <p className="text-[10px] uppercase tracking-wider text-text-muted mb-0.5">Rastreio</p>
                     <p className="font-mono text-sm font-semibold text-accent-green">
-                      {order.trackingCode || generateTrackingCode()}
+                      {order.trackingCode || generateTrackingCode(order.id)}
                     </p>
                   </div>
                   <div className="text-right">

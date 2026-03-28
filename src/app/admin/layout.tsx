@@ -6,6 +6,7 @@ import { usePathname, useRouter } from 'next/navigation'
 import {
   BarChart3,
   Package,
+  Warehouse,
   ClipboardList,
   Tag,
   Users,
@@ -20,6 +21,7 @@ import { Skeleton } from '@/components/ui/skeleton'
 const sidebarLinks = [
   { href: '/admin/dashboard', label: 'Dashboard', icon: BarChart3 },
   { href: '/admin/inventario', label: 'Inventário', icon: Package },
+  { href: '/admin/estoque', label: 'Estoque', icon: Warehouse },
   { href: '/admin/picking', label: 'Picking', icon: ClipboardList },
   { href: '/admin/etiquetas', label: 'Etiquetas', icon: Tag },
   { href: '/admin/clientes', label: 'Clientes', icon: Users },

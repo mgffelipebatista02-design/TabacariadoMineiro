@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Search, ShoppingCart, User, Menu, ChevronDown } from 'lucide-react'
+import { Search, ShoppingCart, User, Menu, ChevronDown, Settings } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { SITE_NAME, CATEGORIES } from '@/lib/constants'
 import { useMode } from '@/hooks/use-mode'
@@ -55,22 +55,40 @@ export function Header() {
         )}
       >
         <div className="mx-auto flex h-full max-w-[1200px] items-center justify-between px-4">
-          {/* Logo */}
-          <Link
-            href="/"
-            className="flex items-center gap-2 transition-opacity hover:opacity-80"
-          >
-            <Image
-              src="/images/logo-tm.jpg"
-              alt="Tabacaria do Mineiro"
-              width={40}
-              height={40}
-              className="rounded-full"
-            />
-            <span className="hidden font-display text-lg font-bold text-accent-green sm:inline">
-              {SITE_NAME}
-            </span>
-          </Link>
+          {/* Logo + Admin */}
+          <div className="flex items-center gap-3">
+            <Link
+              href="/"
+              className="flex items-center gap-2 transition-opacity hover:opacity-80"
+            >
+              <Image
+                src="/images/logo-tm.jpg"
+                alt="Tabacaria do Mineiro"
+                width={40}
+                height={40}
+                className="rounded-full"
+              />
+              <span className="hidden font-display text-lg font-bold text-accent-green sm:inline">
+                {SITE_NAME}
+              </span>
+            </Link>
+
+            {/* Admin Estoque Link */}
+            {hydrated && user.role === 'admin' && (
+              <Link
+                href="/admin/estoque"
+                className={cn(
+                  'flex items-center gap-1.5 rounded-[--radius-pill] px-3 py-1.5',
+                  'bg-accent-green/10 border border-accent-green/25',
+                  'text-xs font-medium text-accent-green',
+                  'transition-colors hover:bg-accent-green/20'
+                )}
+              >
+                <Settings className="h-3.5 w-3.5" />
+                <span className="hidden sm:inline">Admin</span>
+              </Link>
+            )}
+          </div>
 
           {/* Desktop Nav */}
           <nav className="hidden items-center gap-6 md:flex">
@@ -181,6 +199,7 @@ export function Header() {
               href={hydrated && user.isAuthenticated ? '/minha-conta' : '/login'}
               className="flex h-9 w-9 items-center justify-center rounded-[--radius-md] text-text-secondary hover:bg-bg-card hover:text-text-primary transition-colors"
               aria-label={hydrated && user.isAuthenticated ? 'Minha Conta' : 'Entrar'}
+              suppressHydrationWarning
             >
               <User className="h-5 w-5" />
             </Link>

@@ -170,3 +170,17 @@ export interface Review {
   comment: string
   date: string
 }
+
+export type StockMovementType = 'entrada' | 'saida' | 'ajuste'
+
+export interface StockMovement {
+  id: string
+  productId: string
+  productName: string
+  type: StockMovementType
+  quantity: number
+  reason: string
+  date: string
+  previousStock: number
+  newStock: number
+}

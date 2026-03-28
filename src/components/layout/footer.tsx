@@ -111,7 +111,7 @@ export function Footer() {
             'sm:flex-row sm:justify-between'
           )}
         >
-          <p className="text-xs text-text-muted">
+          <p className="text-xs text-text-muted" suppressHydrationWarning>
             &copy; {currentYear} {SITE_NAME}. Todos os direitos reservados.
           </p>
 
